@@ -1,5 +1,5 @@
 # super-tic-tac-toe
-Super Tic-Tac-Toe is a game.
+Super Tic-Tac-Toe is a game. The game is designed to be played with a friend on the same device.
 
 ## Rules
 
