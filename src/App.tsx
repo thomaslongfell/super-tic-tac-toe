@@ -207,10 +207,10 @@ const SuperTicTacToe = () => {
 
   const renderPlayerIcon = (player: string) => {
     const xIconProps = {
-      className: "w-10 h-10 text-blue-500"
+      className: "w-10 h-10 text-blue-500 inline-block"
     };
     const oIconProps = {
-      className: "w-8 h-8 text-red-500 stroke-[2.5]"
+      className: "w-8 h-8 text-red-500 stroke-[2.5] inline-block"
     };
     return player === 'X' ? <X {...xIconProps} /> : <Circle {...oIconProps} />;
   };
@@ -235,7 +235,9 @@ const SuperTicTacToe = () => {
             className="text-2xl font-bold mb-4 flex items-center"
           >
             <span>Winner:</span>
-            {renderPlayerIcon(bigBoardWinner)}
+            <div className="w-10 h-10 ml-2 inline-flex items-center justify-center">
+              {renderPlayerIcon(bigBoardWinner)}
+            </div>
             <button 
               onClick={resetGame}
               className="ml-4 px-4 py-2 bg-blue-500 text-white rounded"
@@ -246,10 +248,12 @@ const SuperTicTacToe = () => {
         ) : (
           <motion.div 
             initial={false}
-            className="text-xl mb-4 flex items-center"
+            className="text-xl mb-4 flex items-center h-10" // Fixed height to prevent layout shift
           >
             <span className="mr-2">Current Player:</span> 
-            {renderPlayerIcon(currentPlayer)}
+            <div className="w-10 h-10 inline-flex items-center justify-center">
+              {renderPlayerIcon(currentPlayer)}
+            </div>
             {(nextValidBoard !== null && smallBoards[nextValidBoard].winner === null) && (
               <span className="ml-4 text-sm">
                 (Must play in board {nextValidBoard + 1})
@@ -265,11 +269,15 @@ const SuperTicTacToe = () => {
 
       <div className="mt-4 flex justify-center space-x-4 w-full">
         <div className="text-center flex flex-col items-center">
-          <div className="flex justify-center"><X className="w-10 h-10 text-blue-500" /></div>
+          <div className="flex justify-center h-10 items-center">
+            <X className="w-10 h-10 text-blue-500" />
+          </div>
           <div className="text-3xl font-bold">{scores.X}</div>
         </div>
         <div className="text-center flex flex-col items-center">
-          <div className="flex justify-center"><Circle className="w-8 h-8 text-red-500 stroke-[2.5]" /></div>
+          <div className="flex justify-center h-10 items-center">
+            <Circle className="w-8 h-8 text-red-500 stroke-[2.5]" />
+          </div>
           <div className="text-3xl font-bold">{scores.O}</div>
         </div>
       </div>
