@@ -1,6 +1,19 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <style>
+      #version {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            color: rgba(0, 0, 0, 0.5);
+            font-size: 14px;
+            pointer-events: none;
+            user-select: none;
+            z-index: 9001;
+        }
+    </style>
+
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/sttt.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,5 +23,7 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <div id="version">v0.1.2</div>
   </body>
 </html>

@@ -17,3 +17,11 @@ Super Tic-Tac-Toe is a game. The game is designed to be played with a friend on 
  
 - thomaslongfell
   - Code.
+
+## Libraries/Dependencies
+Thank you for these amazing free resources. I love you all.
+
+- [shadcn/ui](https://ui.shadcn.com/)
+- [lucide](https://lucide.dev/)
+- [tailwindcss](https://tailwindcss.com/)
+- [Motion (framer-motion)](https://motion.dev/)
